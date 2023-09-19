@@ -5,5 +5,5 @@ import com.serviciosAdministrativos.servicios.domain.entities.DBTwo.VotacionActi
 import java.util.ArrayList;
 
 public interface IVotacionActivaService {
-     ArrayList<VotacionActivaEntity> buscarVotaciones(Integer estado);
+     ArrayList<VotacionActivaEntity> buscarVotaciones(Integer estado, String email);
 }
