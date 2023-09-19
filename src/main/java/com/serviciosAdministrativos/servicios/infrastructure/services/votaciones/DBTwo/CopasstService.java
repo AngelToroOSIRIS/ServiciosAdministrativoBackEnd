@@ -1,16 +1,12 @@
 package com.serviciosAdministrativos.servicios.infrastructure.services.votaciones.DBTwo;
 
 import com.serviciosAdministrativos.servicios.domain.entities.DBOne.PersonaActivaEntity;
-import com.serviciosAdministrativos.servicios.domain.entities.DBTwo.VotacionActivaEntity;
 import com.serviciosAdministrativos.servicios.domain.entities.DBTwo.VotanteEntity;
 import com.serviciosAdministrativos.servicios.domain.repositories.DBOne.PersonaActivaRepository;
-import com.serviciosAdministrativos.servicios.domain.repositories.DBTwo.VotacionActivaRepository;
 import com.serviciosAdministrativos.servicios.domain.repositories.DBTwo.VotanteRepository;
 import com.serviciosAdministrativos.servicios.infrastructure.abstract_services.votaciones.ICopasstService;
-import com.serviciosAdministrativos.servicios.infrastructure.abstract_services.votaciones.IVotacionActivaService;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -18,9 +14,9 @@ import java.util.Optional;
 @Service
 public class CopasstService implements ICopasstService {
 
-
     private final VotanteRepository votanteRepository;
     private final PersonaActivaRepository personaActivaRepository;
+
 
     public CopasstService(VotanteRepository votanteRepository, PersonaActivaRepository personaActivaRepository) {
         this.personaActivaRepository = personaActivaRepository;

@@ -1,7 +1,6 @@
 package com.serviciosAdministrativos.servicios.api.controllers.votaciones;
 
 import com.serviciosAdministrativos.servicios.infrastructure.abstract_services.votaciones.IVotacionActivaService;
-import com.serviciosAdministrativos.servicios.infrastructure.abstract_services.votaciones.IVotanteService;
 import com.serviciosAdministrativos.servicios.util.votaciones.errors.ValidationErrorHandler;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +15,6 @@ public class VotacionActivaController {
 
     public VotacionActivaController(IVotacionActivaService iVotacionActivaService) {
         this.iVotacionActivaService = iVotacionActivaService;
-
     }
 
     @GetMapping

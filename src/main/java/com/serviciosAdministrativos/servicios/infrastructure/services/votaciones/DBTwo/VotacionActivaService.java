@@ -37,6 +37,8 @@ public class VotacionActivaService implements IVotacionActivaService {
                         nuevaVotacion.put("nombre", votacion.getNombre());
                         if (votacion.getId() == 1) {
                            nuevaVotacion.put("estado_voto", votanteFind.get().getCopasst().toString());
+                        }if (votacion.getId() == 3) {
+                            nuevaVotacion.put("estado_voto", votanteFind.get().getCcl().toString());
                         }else {
                             nuevaVotacion.put("estado_voto", "0");
                         }

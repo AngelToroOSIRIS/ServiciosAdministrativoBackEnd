@@ -12,6 +12,15 @@ public class VotanteEntity {
     private Integer identificacion;
     private Integer copasst;
     private LocalDate fecha_copasst;
+    private Integer ccl;
+
+    public Integer getCcl() {
+        return ccl;
+    }
+
+    public void setCcl(Integer ccl) {
+        this.ccl = ccl;
+    }
 
     public Integer getIdentificacion() {
         return identificacion;

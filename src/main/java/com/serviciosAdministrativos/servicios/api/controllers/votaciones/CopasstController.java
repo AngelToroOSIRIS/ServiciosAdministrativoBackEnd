@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/copasst")
+
 public class CopasstController {
 
     private final ICopasstService iCopasstService;
@@ -28,4 +29,5 @@ public class CopasstController {
             return ValidationErrorHandler.handleException(e);
         }
     }
+
 }
