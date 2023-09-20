@@ -31,15 +31,15 @@ public class VotacionActivaService implements IVotacionActivaService {
                 ArrayList<VotacionActivaEntity> votacionesActivas = votacionActivaRepository.findAllByEstado(estado);
                 if (!votacionesActivas.isEmpty()) {
                     ArrayList votacionesPersona = new ArrayList<>();
-                    for (VotacionActivaEntity votacion : votacionesActivas){
-                         Map<String, String> nuevaVotacion = new HashMap<>();
+                    for (VotacionActivaEntity votacion : votacionesActivas) {
+                        Map<String, String> nuevaVotacion = new HashMap<>();
                         nuevaVotacion.put("id", votacion.getId().toString());
                         nuevaVotacion.put("nombre", votacion.getNombre());
                         if (votacion.getId() == 1) {
-                           nuevaVotacion.put("estado_voto", votanteFind.get().getCopasst().toString());
-                        }if (votacion.getId() == 3) {
+                            nuevaVotacion.put("estado_voto", votanteFind.get().getCopasst().toString());
+                        }else if (votacion.getId() == 3) {
                             nuevaVotacion.put("estado_voto", votanteFind.get().getCcl().toString());
-                        }else {
+                        } else {
                             nuevaVotacion.put("estado_voto", "0");
                         }
                         votacionesPersona.add(nuevaVotacion);
