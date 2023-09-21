@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 
 @Repository
-public interface CandidatosCopasstRepository extends JpaRepository<CandidatosEntity, Integer> {
-    @Query("SELECT e FROM CandidatosEntity e WHERE e.idcrp = 120")
-    ArrayList<CandidatosEntity> findAllByIdcrp(@Param("idcrp") Integer idcrp);
+public interface CandidatosCclRepository extends JpaRepository<CandidatosEntity, Integer> {
+    @Query("SELECT e FROM CandidatosEntity e WHERE e.idcrp = 121")
+    ArrayList<CandidatosEntity> findByIdcrp(@Param("idcrp") Integer idcrp);
 }

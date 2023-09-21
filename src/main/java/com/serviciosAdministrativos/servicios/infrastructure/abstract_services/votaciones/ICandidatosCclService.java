@@ -4,6 +4,6 @@ import com.serviciosAdministrativos.servicios.domain.entities.DBTwo.CandidatosEn
 
 import java.util.ArrayList;
 
-public interface ICandidatosCopasstService {
-    ArrayList<CandidatosEntity> buscarCandidatos(Integer idcrp);
+public interface ICandidatosCclService {
+    ArrayList<CandidatosEntity>buscarCandidatosCcl(Integer idcrp);
 }

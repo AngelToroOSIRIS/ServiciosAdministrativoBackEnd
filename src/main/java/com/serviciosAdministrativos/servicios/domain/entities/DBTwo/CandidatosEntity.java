@@ -3,11 +3,10 @@ package com.serviciosAdministrativos.servicios.domain.entities.DBTwo;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import org.aspectj.weaver.ast.Var;
 
 @Entity
 @Table(name = "candidatos")
-public class CandidatosCopasstEntity {
+public class CandidatosEntity {
     @Id
     private Integer id;
     private Integer idcrp;

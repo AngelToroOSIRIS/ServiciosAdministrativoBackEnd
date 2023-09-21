@@ -1,6 +1,6 @@
 package com.serviciosAdministrativos.servicios.infrastructure.services.votaciones.DBTwo;
 
-import com.serviciosAdministrativos.servicios.domain.entities.DBTwo.CandidatosCopasstEntity;
+import com.serviciosAdministrativos.servicios.domain.entities.DBTwo.CandidatosEntity;
 import com.serviciosAdministrativos.servicios.domain.repositories.DBTwo.CandidatosCopasstRepository;
 import com.serviciosAdministrativos.servicios.infrastructure.abstract_services.votaciones.ICandidatosCopasstService;
 import org.springframework.stereotype.Service;
@@ -15,8 +15,8 @@ public class CandidatosCopasstService implements ICandidatosCopasstService {
         this.candidatosCopasstRepository = candidatosCopasstRepository;
     }
 
-    public ArrayList<CandidatosCopasstEntity> buscarCandidatos(Integer idcrp){
-        ArrayList<CandidatosCopasstEntity>buscarCandidatos = candidatosCopasstRepository.findAllByIdcrp(idcrp);
+    public ArrayList<CandidatosEntity> buscarCandidatos(Integer idcrp){
+        ArrayList<CandidatosEntity>buscarCandidatos = candidatosCopasstRepository.findAllByIdcrp(idcrp);
         if (!buscarCandidatos.isEmpty()){
             return buscarCandidatos;
         } else {
