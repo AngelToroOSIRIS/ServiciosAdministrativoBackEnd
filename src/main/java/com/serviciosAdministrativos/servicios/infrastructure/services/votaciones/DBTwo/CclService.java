@@ -1,12 +1,15 @@
 package com.serviciosAdministrativos.servicios.infrastructure.services.votaciones.DBTwo;
 
+import com.serviciosAdministrativos.servicios.api.models.votaciones.request.VotoRequest;
 import com.serviciosAdministrativos.servicios.domain.entities.DBOne.PersonaActivaEntity;
+import com.serviciosAdministrativos.servicios.domain.entities.DBTwo.VotacionActivaEntity;
 import com.serviciosAdministrativos.servicios.domain.entities.DBTwo.VotanteEntity;
 import com.serviciosAdministrativos.servicios.domain.repositories.DBOne.PersonaActivaRepository;
 import com.serviciosAdministrativos.servicios.domain.repositories.DBTwo.VotanteRepository;
 import com.serviciosAdministrativos.servicios.infrastructure.abstract_services.votaciones.ICclService;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -17,10 +20,14 @@ public class CclService implements ICclService {
     private final VotanteRepository votanteRepository;
     private final PersonaActivaRepository personaActivaRepository;
 
+
+
     public CclService(VotanteRepository votanteRepository, PersonaActivaRepository personaActivaRepository) {
         this.votanteRepository = votanteRepository;
         this.personaActivaRepository = personaActivaRepository;
     }
+
+
 
     public Map <String,String> VerificarVotoCcl(String email){
         Optional<PersonaActivaEntity> personaActivaFind = personaActivaRepository.findByEmail(email);

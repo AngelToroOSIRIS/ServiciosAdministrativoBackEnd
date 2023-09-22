@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "cuerpocol")
 public class VotacionActivaEntity {
@@ -15,7 +17,6 @@ public class VotacionActivaEntity {
 
     private Integer tprep;
     private Integer estado;
-
 
     public Integer getId() {
         return id;

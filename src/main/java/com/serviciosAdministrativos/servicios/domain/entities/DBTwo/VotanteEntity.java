@@ -12,6 +12,16 @@ public class VotanteEntity {
     private Integer identificacion;
     private Integer copasst;
     private LocalDate fecha_copasst;
+    private LocalDate fecha_ccl;
+
+    public LocalDate getFecha_ccl() {
+        return fecha_ccl;
+    }
+
+    public void setFecha_ccl(LocalDate fecha_ccl) {
+        this.fecha_ccl = fecha_ccl;
+    }
+
     private Integer ccl;
 
     public Integer getCcl() {
