@@ -9,6 +9,9 @@ import com.serviciosAdministrativos.servicios.util.votaciones.errors.ValidationE
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/ccl")
@@ -30,23 +33,23 @@ public class CclController {
     @GetMapping("/estado_voto")
     public ResponseEntity<?> get(@RequestParam String email) {
         try {
-        return ResponseEntity.ok(iCclService.VerificarVotoCcl(email));
-    } catch (IllegalArgumentException e) {
+            return ResponseEntity.ok(iCclService.VerificarVotoCcl(email));
+        } catch (IllegalArgumentException e) {
             System.out.println(e);
-        return ValidationErrorHandler.handleValidation(e);
-    }   catch (RuntimeException e) {
+            return ValidationErrorHandler.handleValidation(e);
+        } catch (RuntimeException e) {
             System.out.println(e);
             return ValidationErrorHandler.handleException(e);
         }
     }
 
     @GetMapping("/candidatos")
-    public ResponseEntity<?> get(){
+    public ResponseEntity<?> get() {
         try {
             return ResponseEntity.ok(iCandidatosCclService.buscarCandidatosCcl(121));
-        } catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             return ValidationErrorHandler.handleValidation(e);
-        }catch (RuntimeException e){
+        } catch (RuntimeException e) {
             return ValidationErrorHandler.handleException(e);
         }
     }
@@ -55,7 +58,10 @@ public class CclController {
     public ResponseEntity<?> post(@RequestBody VotoRequest votacionesRequest, @RequestParam String email) throws Exception {
         try {
             iVotacionesSecurity.userAuthorized(email);
-            return ResponseEntity.ok(iVotoRequestService.save(votacionesRequest, email));
+            iVotoRequestService.save(votacionesRequest, email);
+            Map<String, String> result = new HashMap<>();
+            result.put("Mensaje", "Correcto");
+            return ResponseEntity.ok(result);
         } catch (IllegalArgumentException e) {
             return ValidationErrorHandler.handleValidation(e);
         } catch (RuntimeException e) {

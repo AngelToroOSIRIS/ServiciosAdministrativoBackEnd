@@ -37,6 +37,7 @@ public class VotoRequestService implements IVotoRequestService {
         if (votanteFindEmail.isPresent()) {
             Optional<VotanteEntity> votanteFind = votanteRepository.findByIdentificacion(votanteFindEmail.get().getNroDocumento());
             if (votanteFind.isPresent()) {
+//                System.out.println(votoRequest.getCandidatos());
                 for (Integer nroton : votoRequest.getCandidatos()) {
                     VotacionesEntity saveVotaciones = new VotacionesEntity();
                     saveVotaciones.setIdcrp(votoRequest.getIdcrp());
