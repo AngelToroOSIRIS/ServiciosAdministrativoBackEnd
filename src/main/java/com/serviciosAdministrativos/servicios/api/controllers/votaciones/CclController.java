@@ -55,7 +55,7 @@ public class CclController {
     public ResponseEntity<?> post(@RequestBody VotoRequest votacionesRequest, @RequestParam String email) throws Exception {
         try {
             iVotacionesSecurity.userAuthorized(email);
-            return ResponseEntity.ok(iVotoRequestService.save(votacionesRequest));
+            return ResponseEntity.ok(iVotoRequestService.save(votacionesRequest, email));
         } catch (IllegalArgumentException e) {
             return ValidationErrorHandler.handleValidation(e);
         } catch (RuntimeException e) {

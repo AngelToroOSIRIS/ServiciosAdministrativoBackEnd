@@ -1,36 +1,18 @@
 package com.serviciosAdministrativos.servicios.api.models.votaciones.request;
 
-import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class VotoRequest {
-    private Integer id;
     private Integer idcrp;
-    private Integer nroton;
-    private String identificacion;
-    private String fecha;
+    private ArrayList<Integer> candidatos;
+    private String periodo;
 
-    public Integer getNroton() {
-        return nroton;
+    public ArrayList<Integer> getCandidatos() {
+        return candidatos;
     }
 
-    public void setNroton(Integer nroton) {
-        this.nroton = nroton;
-    }
-
-    public String getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+    public void setCandidatos(ArrayList<Integer> candidatos) {
+        this.candidatos = candidatos;
     }
 
     public Integer getIdcrp() {
@@ -41,11 +23,13 @@ public class VotoRequest {
         this.idcrp = idcrp;
     }
 
-    public String getIdentificacion() {
-        return identificacion;
+    public String getPeriodo() {
+        return periodo;
     }
 
-    public void setIdentificacion(String identificacion) {
-        this.identificacion = identificacion;
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
     }
+
 }
+

@@ -6,5 +6,5 @@ import java.util.Map;
 
 public interface IVotoRequestService {
     Map<String,String> votacionesRequest(String email);
-    Object save(VotoRequest votacionesRequest) throws Exception;
+    Object save(VotoRequest votacionesRequest, String email) throws Exception;
 }

@@ -9,9 +9,20 @@ import java.time.LocalDateTime;
 public class VotacionesEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
     private Integer idcrp;
     private Integer nroton;
     private LocalDateTime fecha;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     private String periodo;
 
     public Integer getIdcrp() {

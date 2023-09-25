@@ -11,6 +11,7 @@ public class VotanteEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer identificacion;
     private Integer copasst;
+    private Integer ccl;
     private LocalDate fecha_copasst;
     private LocalDate fecha_ccl;
 
@@ -21,8 +22,6 @@ public class VotanteEntity {
     public void setFecha_ccl(LocalDate fecha_ccl) {
         this.fecha_ccl = fecha_ccl;
     }
-
-    private Integer ccl;
 
     public Integer getCcl() {
         return ccl;

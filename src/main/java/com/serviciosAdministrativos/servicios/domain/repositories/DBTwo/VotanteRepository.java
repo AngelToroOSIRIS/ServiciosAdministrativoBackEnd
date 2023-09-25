@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.Optional;
 
 public interface VotanteRepository extends JpaRepository<VotanteEntity, Integer> {
-    @Query(value = "SELECT * FROM Votaciones.vot.votantes WHERE identificacion = :identificacion ", nativeQuery = true)
+    @Query(value = "SELECT * FROM Votaciones.vot.votantes WHERE identificacion = :identificacion", nativeQuery = true)
     Optional<VotanteEntity> findByIdentificacion(@Param("identificacion") String identificacion);
 }
