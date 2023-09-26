@@ -9,6 +9,9 @@ import com.serviciosAdministrativos.servicios.util.votaciones.errors.ValidationE
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/copasst")
@@ -55,7 +58,10 @@ public class CopasstController {
     public ResponseEntity<?> post(@RequestBody VotoRequest votacionesRequest, @RequestParam String email) throws Exception {
         try {
             iVotacionesSecurity.userAuthorized(email);
-            return ResponseEntity.ok(iVotoRequestService.save(votacionesRequest, email));
+            iVotoRequestService.save(votacionesRequest, email);
+            Map<String, String> result = new HashMap<>();
+            result.put("Mensaje", "Correcto");
+            return ResponseEntity.ok(result);
         } catch (IllegalArgumentException e) {
             return ValidationErrorHandler.handleValidation(e);
         } catch (RuntimeException e) {
